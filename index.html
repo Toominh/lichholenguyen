@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html lang="vi"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Lịch Họ Lê - Nguyễn</title>
+    <title>Lịch TU AN</title>
     <style>
         :root {
             --primary: #ef5350;
@@ -357,7 +358,7 @@
     <button class="btn-admin" onclick="showAboutPopup()">Giới thiệu</button>
 </div>
 
-<div id="aboutPopup" class="modal-overlay" onclick="hideAboutPopup()" style="display: none;">
+<div id="aboutPopup" class="modal-overlay" onclick="hideAboutPopup()">
     <div class="modal-content" onclick="event.stopPropagation()">
         <div class="modal-header">
             <h3>Giới Thiệu Lịch TU AN</h3>
@@ -374,14 +375,14 @@
     </div>
 </div>
 
-<div id="categoryModal" class="modal-overlay" style="display: none;">
+<div id="categoryModal" class="modal-overlay">
     <div class="modal-content">
         <div class="modal-header">
-            <h3 id="catModalTitle">Chỉnh sửa lịch</h3>
+            <h3 id="catModalTitle">Thêm Đề Mục</h3>
             <button class="close-btn" onclick="closeCategoryModal()">×</button>
         </div>
         <div class="modal-body">
-            <input type="hidden" id="editCatId" value="1">
+            <input type="hidden" id="editCatId">
             <div style="margin-bottom:15px">
                 <label>Tên lịch:</label>
                 <input type="text" id="catName" style="width:100%" placeholder="Ví dụ: Gia đình, Công việc...">
@@ -397,140 +398,18 @@
                 <div>
                     <label>Màu sắc:</label><br>
                     <div id="colorPickerContainer" style="display: flex; gap: 8px; margin-top: 5px;">
-                        <input type="hidden" id="catColor" value="#ff4081">
+                        <input type="hidden" id="catColor" value="#ffeb3b">
                         <div class="color-swatch" data-color="#ffeb3b" style="background-color: #ffeb3b;" onclick="selectColor(this)"></div>
                         <div class="color-swatch" data-color="#00e5ff" style="background-color: #00e5ff;" onclick="selectColor(this)"></div>
-                        <div class="color-swatch active" data-color="#ff4081" style="background-color: #ff4081;" onclick="selectColor(this)"></div>
+                        <div class="color-swatch" data-color="#ff4081" style="background-color: #ff4081;" onclick="selectColor(this)"></div>
                         <div class="color-swatch" data-color="#66bb6a" style="background-color: #66bb6a;" onclick="selectColor(this)"></div>
                         <div class="color-swatch" data-color="#ff9800" style="background-color: #ff9800;" onclick="selectColor(this)"></div>
                     </div>
                 </div>
             </div>
-            <div id="eventListEditor"><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="20/4" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật ông Đức" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="12/5" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật bà Thuỷ - Đức" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="14/7" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật bà Thuý - Tiến" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="26/8" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật ông Tiến" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="10/2" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật ông Cậu" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="3/4" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật bà Sự" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="24/1" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Nguyễn Xuân Hiến" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="13/1" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Trần Minh Tân" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="30/5" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Nguyễn Thị Hằng" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="23/7" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Trần Thu Dung" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="14/12" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Trần Quý Anh" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="25/7" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Nguyễn Thị Oanh" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="14/9" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Lê Thị Thanh Thảo" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="1/10" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Hà Minh Tuân" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="2/1" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Trần Hoài Dương" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="11/11" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Nguyễn Huy" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="4/8" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Hà Thị Minh Loan" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="1/12" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Lê Khánh Toàn" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="21/11" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Phạm Thuỳ Linh" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="14/11" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Trần Ngọc Quỳnh" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="10/12" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Trần Tuấn Hưng" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="7/2" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Nguyễn Xuân Lâm" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="24/11" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Nguyễn Thanh Hằng" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="25/1" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Lê Ngọc Khánh Linh" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="29/1" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Nguyễn Xuân Minh" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="3/7" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Nguyễn Ngọc Hân" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="25/8" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Trần Minh Quang" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="13/11" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Nguyễn Lê Trung Hiếu" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="23/1" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Phạm Khánh Ngọc" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="20/12" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Trần Hương Giang" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div><div class="event-row">
-        <input type="text" placeholder="VD: 14/7" value="5/9" class="ev-date">
-        <input type="text" placeholder="Tên kỷ niệm" value="Sinh nhật Lê Hùng Cường" class="ev-name">
-        <button class="btn-del" onclick="this.parentElement.remove()">✕</button>
-    </div></div>
+            <div id="eventListEditor">
+                <label>Danh sách ngày (Ngày/Tháng - Tên):</label>
+            </div>
             <button class="btn-today" style="width:100%; margin-top:10px" onclick="addNewEventRow()">+ Thêm ngày</button>
             <hr style="border:0; border-top:1px solid #444; margin:20px 0;">
             <button class="btn-leap" style="width:100%; padding:12px" onclick="saveCategory()">CẬP NHẬT LƯU TRỮ</button>
@@ -538,73 +417,13 @@
     </div>
 </div>
 
-<div id="manageModal" class="modal-overlay" style="display: none;">
+<div id="manageModal" class="modal-overlay">
     <div class="modal-content">
         <div class="modal-header">
             <h3>Danh Sách Lịch</h3>
             <button class="close-btn" onclick="closeManageModal()">×</button>
         </div>
-        <div class="modal-body" id="categoryListContainer" style="padding:0"><div class="category-item">
-            <div onclick="openCategoryModal('1')" style="flex:1">
-                <div style="font-weight:bold; display:flex; align-items:center; gap:8px;">
-                    <span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#ff4081; border: 1px solid #444;"></span>
-                    Sinh Nhật
-                </div>
-                <small style="opacity:0.6">Dương lịch (31 ngày)</small>
-            </div>
-            <div style="display:flex; gap:12px; align-items:center">
-                <label class="switch">
-                    <input type="checkbox" checked="" onchange="toggleVisibility('1')">
-                    <span class="slider"></span>
-                </label>
-                <button class="btn-del" onclick="deleteCategory('1')">🗑️</button>
-            </div>
-        </div><div class="category-item">
-            <div onclick="openCategoryModal('2')" style="flex:1">
-                <div style="font-weight:bold; display:flex; align-items:center; gap:8px;">
-                    <span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#00e5ff; border: 1px solid #444;"></span>
-                    Lễ Dương Lịch
-                </div>
-                <small style="opacity:0.6">Dương lịch (5 ngày)</small>
-            </div>
-            <div style="display:flex; gap:12px; align-items:center">
-                <label class="switch">
-                    <input type="checkbox" checked="" onchange="toggleVisibility('2')">
-                    <span class="slider"></span>
-                </label>
-                <button class="btn-del" onclick="deleteCategory('2')">🗑️</button>
-            </div>
-        </div><div class="category-item">
-            <div onclick="openCategoryModal('3')" style="flex:1">
-                <div style="font-weight:bold; display:flex; align-items:center; gap:8px;">
-                    <span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#ff9800; border: 1px solid #444;"></span>
-                    Lễ Âm Lịch
-                </div>
-                <small style="opacity:0.6">Âm lịch (4 ngày)</small>
-            </div>
-            <div style="display:flex; gap:12px; align-items:center">
-                <label class="switch">
-                    <input type="checkbox" checked="" onchange="toggleVisibility('3')">
-                    <span class="slider"></span>
-                </label>
-                <button class="btn-del" onclick="deleteCategory('3')">🗑️</button>
-            </div>
-        </div><div class="category-item">
-            <div onclick="openCategoryModal('1776928818550')" style="flex:1">
-                <div style="font-weight:bold; display:flex; align-items:center; gap:8px;">
-                    <span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#ff9800; border: 1px solid #444;"></span>
-                    Ngày giỗ
-                </div>
-                <small style="opacity:0.6">Âm lịch (3 ngày)</small>
-            </div>
-            <div style="display:flex; gap:12px; align-items:center">
-                <label class="switch">
-                    <input type="checkbox" checked="" onchange="toggleVisibility('1776928818550')">
-                    <span class="slider"></span>
-                </label>
-                <button class="btn-del" onclick="deleteCategory('1776928818550')">🗑️</button>
-            </div>
-        </div></div>
+        <div class="modal-body" id="categoryListContainer" style="padding:0"></div>
         <div style="padding: 15px; border-top: 1px solid var(--border-color); text-align: center;">
             <button class="btn-admin" style="width: 100%; font-size: 1rem; padding: 12px; border-radius: 8px;" onclick="openCategoryModal()">
                 Thêm lịch mới
@@ -620,7 +439,7 @@
     </div>
 </div>
 
-<div id="eventsPopup" class="modal-overlay" onclick="hideUpcomingEvents()" style="display: none;">
+<div id="eventsPopup" class="modal-overlay" onclick="hideUpcomingEvents()">
     <div class="modal-content" onclick="event.stopPropagation()">
         <div class="modal-header"><h3 style="margin:0; font-size:1rem">10 SỰ KIỆN SẮP TỚI</h3><button class="close-btn" onclick="hideUpcomingEvents()">×</button></div>
         <div class="modal-body" style="padding: 0;">
@@ -628,7 +447,7 @@
                 <thead style="position: sticky; top: 0; background: var(--grid-header-bg); z-index: 10;">
                     <tr><th>Kỷ niệm</th><th>Ngày</th><th>Còn lại</th></tr>
                 </thead>
-                <tbody><tr><td style="text-align:left; padding-left:15px; color:#ff9800; font-weight:bold">Giỗ Tổ Hùng Vương</td><td>10/3 (AL)</td><td style="color:var(--success)">3 ngày</td></tr><tr><td style="text-align:left; padding-left:15px; color:#00e5ff; font-weight:bold">Thống nhất đất nước</td><td>30/4 (DL)</td><td style="color:var(--success)">7 ngày</td></tr><tr><td style="text-align:left; padding-left:15px; color:#00e5ff; font-weight:bold">Quốc tế Lao động</td><td>1/5 (DL)</td><td style="color:var(--success)">8 ngày</td></tr><tr><td style="text-align:left; padding-left:15px; color:#ff4081; font-weight:bold">Sinh nhật bà Thuỷ - Đức</td><td>12/5 (DL)</td><td style="color:var(--success)">19 ngày</td></tr><tr><td style="text-align:left; padding-left:15px; color:#00e5ff; font-weight:bold">Giỗ ông Khang</td><td>18/5 (DL)</td><td style="color:var(--success)">25 ngày</td></tr><tr><td style="text-align:left; padding-left:15px; color:#ff4081; font-weight:bold">Sinh nhật Nguyễn Thị Hằng</td><td>30/5 (DL)</td><td style="color:var(--success)">37 ngày</td></tr><tr><td style="text-align:left; padding-left:15px; color:#ff9800; font-weight:bold">Ngày Phật đản</td><td>15/4 (AL)</td><td style="color:var(--success)">38 ngày</td></tr><tr><td style="text-align:left; padding-left:15px; color:#ff4081; font-weight:bold">Sinh nhật Nguyễn Ngọc Hân</td><td>3/7 (DL)</td><td style="color:var(--success)">71 ngày</td></tr><tr><td style="text-align:left; padding-left:15px; color:#ff4081; font-weight:bold">Sinh nhật bà Thuý - Tiến</td><td>14/7 (DL)</td><td style="color:var(--success)">82 ngày</td></tr><tr><td style="text-align:left; padding-left:15px; color:#ff4081; font-weight:bold">Sinh nhật Trần Thu Dung</td><td>23/7 (DL)</td><td style="color:var(--success)">91 ngày</td></tr></tbody>
+                <tbody></tbody>
             </table>
         </div>
     </div>
@@ -684,9 +503,85 @@ function getTietKhi(d, m, y) {
 
 // --- USER DATA MANAGEMENT ---
 const DEFAULT_CATEGORIES = [
-    { id: '1', name: 'Sinh Nhật', type: 'SOLAR', visible: true, color: '#ffeb3b', events: { "19/5": "Sinh nhật Bác ❤️"} },
-    { id: '2', name: 'Lễ Dương Lịch', type: 'SOLAR', visible: true, color: '#00e5ff', events: { "1/1": "Tết Dương Lịch", "30/4": "Thống nhất đất nước", "1/5": "Quốc tế Lao động", "2/9": "Quốc Khánh" } },
-    { id: '3', name: 'Lễ Âm Lịch', type: 'LUNAR', visible: true, color: '#ff4081', events: { "1/1": "Mùng 1 Tết", "15/1": "Rằm Tháng Giêng", "10/3": "Giỗ Tổ Hùng Vương", "15/8": "Trung Thu", "15/4": "Phật Đản" } }
+    {
+        "id": "1",
+        "name": "Sinh Nhật",
+        "type": "SOLAR",
+        "visible": true,
+        "events": {
+            "20/4": "Sinh nhật ông Đức",
+            "12/5": "Sinh nhật bà Thuỷ - Đức",
+            "14/7": "Sinh nhật bà Thuý - Tiến",
+            "26/8": "Sinh nhật ông Tiến",
+            "10/2": "Sinh nhật ông Cậu",
+            "3/4": "Sinh nhật bà Sự",
+            "24/1": "Sinh nhật Nguyễn Xuân Hiến",
+            "13/1": "Sinh nhật Trần Minh Tân",
+            "30/5": "Sinh nhật Nguyễn Thị Hằng",
+            "23/7": "Sinh nhật Trần Thu Dung",
+            "14/12": "Sinh nhật Trần Quý Anh",
+            "25/7": "Sinh nhật Nguyễn Thị Oanh",
+            "14/9": "Sinh nhật Lê Thị Thanh Thảo",
+            "1/10": "Sinh nhật Hà Minh Tuân",
+            "2/1": "Sinh nhật Trần Hoài Dương",
+            "11/11": "Sinh nhật Nguyễn Huy",
+            "4/8": "Sinh nhật Hà Thị Minh Loan",
+            "1/12": "Sinh nhật Lê Khánh Toàn",
+            "21/11": "Sinh nhật Phạm Thuỳ Linh",
+            "14/11": "Sinh nhật Trần Ngọc Quỳnh",
+            "10/12": "Sinh nhật Trần Tuấn Hưng",
+            "7/2": "Sinh nhật Nguyễn Xuân Lâm",
+            "24/11": "Sinh nhật Nguyễn Thanh Hằng",
+            "25/1": "Sinh nhật Lê Ngọc Khánh Linh",
+            "29/1": "Sinh nhật Nguyễn Xuân Minh",
+            "3/7": "Sinh nhật Nguyễn Ngọc Hân",
+            "25/8": "Sinh nhật Trần Minh Quang",
+            "13/11": "Sinh nhật Nguyễn Lê Trung Hiếu",
+            "23/1": "Sinh nhật Phạm Khánh Ngọc",
+            "20/12": "Sinh nhật Trần Hương Giang",
+            "5/9": "Sinh nhật Lê Hùng Cường"
+        },
+        "color": "#ff4081"
+    },
+    {
+        "id": "2",
+        "name": "Lễ Dương Lịch",
+        "type": "SOLAR",
+        "visible": true,
+        "events": {
+            "1/1": "Tết Dương lịch",
+            "30/4": "Thống nhất đất nước",
+            "1/5": "Quốc tế Lao động",
+            "2/9": "Quốc khánh",
+            "18/5": "Giỗ ông Khang"
+        },
+        "color": "#00e5ff"
+    },
+    {
+        "id": "3",
+        "name": "Lễ Âm Lịch",
+        "type": "LUNAR",
+        "visible": true,
+        "events": {
+            "1/1": "Mùng 1 Tết",
+            "10/3": "Giỗ Tổ Hùng Vương",
+            "15/8": "Trung Thu",
+            "15/4": "Ngày Phật đản"
+        },
+        "color": "#ff9800"
+    },
+    {
+        "id": "1776928818550",
+        "name": "Ngày giỗ",
+        "type": "LUNAR",
+        "color": "#ff9800",
+        "visible": true,
+        "events": {
+            "19/7": "Giỗ cụ Bà",
+            "19/12": "Giỗ cụ Ông",
+            "25/9": "Giỗ ông Cậu"
+        }
+    }
 ];
 
 let userCategories = JSON.parse(localStorage.getItem('vn_calendar_data')) || DEFAULT_CATEGORIES;
@@ -1068,13 +963,25 @@ function hideUpcomingEvents() { document.getElementById('eventsPopup').style.dis
 })();
 
 function exportFullHTML() {
-    const htmlContent = document.documentElement.outerHTML;
+    // Lấy toàn bộ mã HTML của trang hiện tại và thêm lại thẻ DOCTYPE
+    let htmlContent = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    
+    // Chuyển đổi dữ liệu userCategories hiện tại thành chuỗi JSON có định dạng đẹp (xuống dòng, lùi lề)
+    const newCategoriesJSON = JSON.stringify(userCategories, null, 4);
+    
+    // Tìm mảng DEFAULT_CATEGORIES cũ trong mã nguồn và thay thế bằng dữ liệu mới nhất
+    htmlContent = htmlContent.replace(
+        /const DEFAULT_CATEGORIES\s*=\s*\[[\s\S]*?\];/, 
+        `const DEFAULT_CATEGORIES = ${newCategoriesJSON};`
+    );
+
+    // Tạo file HTML và tải xuống
     const blob = new Blob([htmlContent], { type: 'text/html' });
     const url = URL.createObjectURL(blob);
     
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'Lich_Tu_An_Backup.html';
+    a.download = 'Lich_Tu_An_Backup.html'; // Bạn có thể đổi tên file mặc định ở đây nếu muốn
     document.body.appendChild(a);
     a.click();
     
