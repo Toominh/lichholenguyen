@@ -80,9 +80,10 @@
         .sun { color: var(--primary); }
         .sat { color: var(--secondary); }
         .today { background: var(--today-bg); outline: 2px solid var(--primary); z-index: 5; border-radius: 4px; }
-        .selected-cell { background: var(--selected-bg) !important; }
+        
         .special-text { color: var(--primary); font-weight: bold; }
         .special-bg { background-color: var(--lunar-special) !important; }
+        .selected-cell { background: var(--selected-bg) !important; }
         .empty { background: var(--empty-bg); }
 
         .indicator-container { position: absolute; bottom: 3px; display: flex; gap: 2px; justify-content: center; width: 100%; flex-wrap: wrap; }
@@ -661,7 +662,7 @@ function render() {
         const isSelected = d === viewDate.getDate() && m === viewDate.getMonth() && y === viewDate.getFullYear();
         
         const cell = document.createElement('div');
-        cell.className = `cell ${isToday ? 'today' : ''} ${isSelected ? 'selected-cell' : ''} ${(lun.ld === 1 || lun.ld === 15) ? 'special-bg' : ''}`;
+        cell.className = `cell ${isToday ? 'today' : ''} ${(lun.ld === 1 || lun.ld === 15) ? 'special-bg' : ''} ${isSelected ? 'selected-cell' : ''}`;
         
         let indicators = '';
         const tkToday = getTietKhi(d, m + 1, y);
